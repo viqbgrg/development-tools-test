@@ -4,8 +4,21 @@
  * This is a general purpose Gradle build.
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds
  */
+ plugins {
+     id "base"
+ }
+
+description = "A trivial Gradle build"
+version = "1.0"
 
  task copy(type: Copy, group: "Custom", description: "复制文件"){
      from "src"
      into "dest"
+ }
+
+
+
+ task zip(type: Zip, group : "Archive", description: "压缩文件"){
+     from"src"
+     archiveFileName = "base-demo.zip"
  }
