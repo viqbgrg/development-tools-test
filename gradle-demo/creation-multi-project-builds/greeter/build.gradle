@@ -1,0 +1,5 @@
+mainClassName = 'greeter.Greeter'
+
+dependencies {
+    compile project(':greeting-library') 
+}

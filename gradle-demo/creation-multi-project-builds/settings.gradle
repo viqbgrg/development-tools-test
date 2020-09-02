@@ -8,3 +8,6 @@
  */
 
 rootProject.name = 'creation-multi-project-builds'
+
+include 'greeting-library'
+include 'greeter'
