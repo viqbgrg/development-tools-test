@@ -1,5 +1,8 @@
+plugins {
+  id 'java'
+  id 'application'
+}
 mainClassName = 'greeter.Greeter'
-
 dependencies {
-    compile project(':greeting-library') 
+    compile project(':greeting-library')
 }
