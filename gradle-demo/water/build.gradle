@@ -11,12 +11,17 @@
 // }
 // 所有项目
 allprojects {
+    apply plugin: 'java'
     // 程序可以只有一个叫 hello 的 task
     task hello {
         doLast { task ->
             println "I'm $task.project.name"
         }
     }
+}
+
+allprojects{Project project ->
+    println "${project.name}"
 }
 // 配置所有子项目
 subprojects {
@@ -28,6 +33,11 @@ subprojects {
     }
 
     afterEvaluate { Project project ->
+        if (project.name == "krill") {
+            dependencies {
+                implementation "javax.servlet:servlet-api:2.5"
+            }
+        }
         if (project.arctic) {
             hello.configure {
                 doLast {
